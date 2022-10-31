@@ -1,4 +1,5 @@
 // created a new array called buttonColours
+
 var buttonColours = ["red", "blue", "green", "yellow"];
 
 var gamePattern = [];
@@ -6,14 +7,31 @@ var userClickedPattern = [];
 
 var started = false;
 var level = 0;
+
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+  // true for mobile device
+  document.getElementById("level-title").innerText = "Level 1";
+  $(document).ready(function() {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+  
+}
+else{
+  document.getElementById("level-title").innerText = "Press any key to start";
+  $(document).keypress(function() {
+    if (!started) {
+      $("#level-title").text("Level " + level);
+      nextSequence();
+      started = true;
+    }
+  });
+  
+}
 // new function is created called nextSequence()
-$(document).keypress(function() {
-  if (!started) {
-    $("#level-title").text("Level " + level);
-    nextSequence();
-    started = true;
-  }
-});
 
 $(".btn").click(function() {
 
@@ -37,11 +55,12 @@ function checkAnswer(currentLevel) {
     } else {
       playSound("wrong");
       $("body").addClass("game-over");
-      $("#level-title").text("Game Over, Press Any Key to Restart");
+      $("#level-title").text("Game Over, Please wait for 2 seconds 😉");
+
 
       setTimeout(function () {
-        $("body").removeClass("game-over");
-      }, 200);
+        window.location.reload();
+      }, 2000);
 
       startOver();
     }
