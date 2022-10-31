@@ -1,1 +1,1 @@
-this is a simon game repository and has a hosted web page
+This is a simon game repository and has a hosted web page
