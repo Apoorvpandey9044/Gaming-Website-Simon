@@ -1,19 +1,48 @@
+@keyframes animateBg {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
 body {
   text-align: center;
-  overflow-y: hidden;
-  background-color: rgb(43, 171, 171);
+  background-color: rgb(113, 204, 204);
+  overflow-x: hidden;
+  color: whitesmoke;
+  font-weight: bold;
+  animation: animateBg 10s linear infinite;
+  background-image: linear-gradient(0deg,#9d9fe2,#716bb2,#1e2019,#806bbf,#212524,#0b161b,#265a8f,#22228a,#1c382b,#053135,#7977eb,#060400);
+  background-size: 100% 1100%;
+
 }
+@media screen and (min-width: 1252px) and (max-width: 2600px) {
+  body{
+    background:#16222A;   
+background: -webkit-linear-gradient(to right, #3A6073, #16222A);  
+background: linear-gradient(to right, #3A6073, #16222A); 
+    
+  }
+}
+
+@media screen and (min-width: 900px) and (max-width: 1200px) {
+  body{
+    background:#16222A;   
+background: -webkit-linear-gradient(to right, #3A6073, #16222A);  
+background: linear-gradient(to right, #3A6073, #16222A); 
+    
+  }
+}
+
 
 #level-title {
   font-family: 'Press Start', Helvetica ;
   font-size: 3rem;
   height: 15vh;
   margin:  2%;
-  color: black;
+  color: whitesmoke;
 }
 
 .container {
-  display: block;
+  display: inline;
   width: 50%;
   margin: auto;
   margin-top: -35px;
@@ -50,13 +79,69 @@ body {
   background-color: yellow;
 }
 
+.purple{
+  background-color: purple;
+}
+
+.pink{
+  background-color: pink;
+}
+
+.orange{
+  background-color: orange;
+}
+
+.golden{
+  background-color: rgb(0, 255, 157);
+}
 .pressed {
   box-shadow: 0 0 20px white;
   background-color: grey;
 }
+.Instructions{
+  text-align: left;
+  margin-left: 20%;
+  font: 18px Arial, Helvetica, sans-serif;
+  font-weight: bolder;
+  }
+#Level{
+  margin-top: 5%;
+}
+.design{
+  font: 1.5rem Arial, Helvetica, sans-serif;
+  font-weight: lighter;
+}
+/* Footter */
 .footer{
-  background-color: rgba(255, 255, 255, 0.724);
-  padding: 2px;
-  height: 15vh;
+  position:relative;
+  width:100vw;
+  min-height: 50px;
+  overflow: hidden;
+  /* height:100px;  */
+  margin-top: 125px;
+  background-color: rgba(255, 255, 255, 0.724);  
+   }
+  .footerr{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:75px; 
   margin: 0 -10px -10px -10px ;
+  background-color: rgba(255, 255, 255, 0.724);
+  }
+  .footerrr{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:75px; 
+  margin: 0 -10px -10px -10px ;
+  background-color: rgba(255, 255, 255, 0.724);
+}
+.footerrrr{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  height:75px; 
+  margin: 0 -10px -10px -10px ;
+  background-color: rgba(255, 255, 255, 0.724);
 }
