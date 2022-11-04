@@ -1,38 +1,56 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<br lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Simon Gaming</title>
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  
 </head>
-
-<body>
-  <h1 id="level-title"></h1>
-  <div class="container">
-    <div class="row">
-
-      <div type="button" id="green" class="btn green">
-
-      </div>
-
-      <div type="button" id="red" class="btn red">
-
-      </div>
-    </div>
-
-    <div class="row">
-
-      <div type="button" id="yellow" class="btn yellow">
-
-      </div>
-      <div type="button" id="blue" class="btn blue">
-
-      </div>
-
-    </div>
+</head>
+<br>
+  <h1 id="level-title-1"><u>Welcome to the Simon World</u></h1>
+  <br class="container">
+    <h3><u>Instructions To Play</u></h3>
+     <p>
+      <ul class="Instructions">
+        <li >
+          Slide the ON/OFF switch to ON, the Game Selector switch to "1" and the Skill Level switch to 1,2, 3 or 4.
+         </li>
+         <li>
+          Press the START button. Simon will give the first signal. Repeat the signal by pressing the same color lens.
+         </li>
+         <li>
+          Simon will duplicate the first signal and add one.Repeat these two signals by pressing the same color lenses, in order.
+        </li>
+        <li>
+          Simon will duplicate these first two signals and add one.
+        </li>
+        <li>
+          Continue playing as long as you can repeat each sequence of sig- nals correctly. After the 5th, 9th and 13th signals in a sequence, Simon automatically speeds up.
+        </li>
+        <li>
+          If you fail to repeat a sequence exactly, or if you take more than 5 seconds to repeat a signal, Simon responds with a "RAZZ" sound. This means you've lost, and the sequence of signals ends.
+        </li>
+      </ul> 
+      
+     </p>
+    <form id="Level">  
+      <label class="design"> Select a Level </label>  
+      <select id="dropdown-list" style="font-size: 1.5rem">  
+      <option value = "easy.html"> Easy   
+      </option>  
+      <option value = "medium.html" > Medium   
+      </option>  
+      <option value = "hard.html"> Hard  
+      </option>  
+      </select>  
+      <input type=button value="Go" onclick="goToNewPage()" style="font-size: 1.5rem ; border-radius: 10px; outline: none; border: none;"/>
+      </form> 
 
   </div>
 
@@ -41,14 +59,18 @@
 
 </body>
 </div>
-<div class="footer-padding"></div>
+<footer class="footer-padding"></footer>
   <div class="footer">
     <p style="color: black ; font-size: 20px
     ">Made with @ Apoorv Pandey</p>
   </div>
 </div>
 </body>
+<script>
+  $(document).ready(function() {
+    var dropdown = $("#dropdown-list").val();
+    console.log(dropdown);
+  })
+</script>
 </html>
 
-
-</html>
