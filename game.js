@@ -1,6 +1,14 @@
 // created a new array called buttonColours
+function goToNewPage()
+    {
+        var url = document.getElementById('dropdown-list').value;
+        if(url != 'none') {
+            window.location = url;
+        }
+    }
 
-var buttonColours = ["red", "blue", "green", "yellow"];
+    
+var buttonColours = ["red", "blue", "green", "yellow","purple","pink","orange","golden"];
 
 var gamePattern = [];
 var userClickedPattern = [];
@@ -32,6 +40,19 @@ else{
   
 }
 // new function is created called nextSequence()
+var currenturl = window.location.href;
+var spliturl = currenturl.toString().split("/");
+var number  = 0;
+
+if(spliturl[spliturl.length-1] == 'easy.html'){
+  number = 4;
+}
+if(spliturl[spliturl.length-1] == 'medium.html'){
+  number = 6;
+}
+if(spliturl[spliturl.length-1] == 'hard.html'){
+  number = 8;
+}
 
 $(".btn").click(function() {
 
@@ -71,7 +92,7 @@ function nextSequence() {
   userClickedPattern = [];
   level++;
   $("#level-title").text("Level " + level);
-  var randomNumber = Math.floor(Math.random() * 4);
+  var randomNumber = Math.floor(Math.random() * number);
   var randomChosenColour = buttonColours[randomNumber];
   gamePattern.push(randomChosenColour);
 
